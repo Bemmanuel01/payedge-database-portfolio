@@ -11,9 +11,9 @@ This PAYEDGE repository contains practical projects and implementations covering
 - **Key operations:** Open account, transfer funds, deposit/withdraw, reverse failed
 transactions, generate statements, audit balances.
 
-### Portfolio Structure
+## Portfolio Structure
 
-## 1. Database Design and Modelling
+### 1. Database Design and Modelling
 Covers database design principles, entity-relationship modelling, normalisation, and relational database implementation.
 
 ### 2. Query Processing and Optimisation
