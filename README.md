@@ -14,7 +14,7 @@ transactions, generate statements, audit balances.
 ## Portfolio Structure
 
 ### 1. Database Design and Modelling
-Covers database design principles, entity-relationship modelling, normalisation, and relational database implementation.
+Covers database design principles, entity-relationship modelling, normalisation and relational database implementation.
 
 ### 2. Query Processing and Optimisation
 Explores SQL queries, indexing, query execution plans, and optimisation techniques for improving database performance.
