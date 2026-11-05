@@ -39,3 +39,19 @@ VALUES
     (5, '8055788012', 'SAVINGS',   340000.00, 'NGN', 'ACTIVE', '2024-04-18'),
     (5, '0055788012', 'FIXED',    2000000.00, 'NGN', 'ACTIVE', '2024-04-18')
 ;
+
+-- Transaction Data
+INSERT INTO transactions
+(from_account_id, to_account_id, transaction_type, amount, status, reference, narration)
+VALUES
+    (1,    3,    'TRANSFER',    50000.00, 'SUCCESS',  'TXN-20261001-001', 'Rent payment'),
+    (2,    5,    'TRANSFER',   200000.00, 'SUCCESS',  'TXN-20261001-002', 'Loan repayment'),
+    (NULL, 1,    'DEPOSIT',    100000.00, 'SUCCESS',  'TXN-20261002-001', 'Nil'),
+    (3,    NULL, 'WITHDRAWAL',  20000.00, 'SUCCESS',  'TXN-20261002-002', 'Nil'),
+    (4,    6,    'TRANSFER',    15000.00, 'FAILED',   'TXN-20261003-001', 'Snacks Purchase'),
+    (1,    6,    'TRANSFER',    30000.00, 'SUCCESS',  'TXN-20261003-002', 'School fees'),
+    (2,    NULL, 'WITHDRAWAL', 500000.00, 'SUCCESS',  'TXN-20261004-001', 'Client Onus'),
+    (5,    3,    'TRANSFER',    75000.00, 'FAILED',   'TXN-20261004-002', 'Electricity bill'),
+    (NULL, 4,    'DEPOSIT',    250000.00, 'SUCCESS',  'TXN-20261005-001', 'Client fee'),
+    (6,    1,    'TRANSFER',    10000.00, 'REVERSED', 'TXN-20261005-002', 'Nil')
+;
