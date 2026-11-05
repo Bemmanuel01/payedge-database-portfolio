@@ -10,19 +10,20 @@ VALUES
 
 BEGIN;
 
-UPDATE customers SET phone = '08077345338', bvn = '22235289041', updated_at = CURRENT_TIMESTAMP
+UPDATE customers SET phone = '08077343538', bvn = '22235289041', updated_at = CURRENT_TIMESTAMP
 WHERE email = 'adaeze@email.com';
 
-UPDATE customers SET phone = '09123456789', bvn = '22206319012', updated_at = CURRENT_TIMESTAMP
+UPDATE customers SET phone = '09144577709', bvn = '22206319012', updated_at = CURRENT_TIMESTAMP
 WHERE email = 'emeka@email.com';
 
 UPDATE customers SET phone = '07034567890', bvn = '22264790113', updated_at = CURRENT_TIMESTAMP
 WHERE email = 'fatima@email.com';
 
-UPDATE customers SET phone = '08155678901', bvn = '22271901299', updated_at = CURRENT_TIMESTAMP
+UPDATE customers SET phone = '08155609905', bvn = '22271901299', updated_at = CURRENT_TIMESTAMP
 WHERE email = 'chidi@email.com';
 
-UPDATE customers SET phone = '08056789012', bvn = '22208401315', updated_at = CURRENT_TIMESTAMP
+UPDATE customers SET phone = '08055788012', bvn = '22208401315', updated_at = CURRENT_TIMESTAMP
 WHERE email = 'ngozi@email.com';
 
 COMMIT;
+
