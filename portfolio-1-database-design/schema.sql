@@ -18,6 +18,16 @@ CREATE TABLE customers (
         CHECK (kyc_status IN ('PENDING', 'VERIFIED', 'REJECTED'))
 );
 
+CREATE TABLE staff (
+    staff_id    SERIAL          PRIMARY KEY,
+    full_name   VARCHAR(100)    NOT NULL,
+    email       VARCHAR(150)    UNIQUE NOT NULL,
+    role        VARCHAR(30)     NOT NULL,
+    created_at  TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_staff_role
+        CHECK (role IN ('TELLER', 'ADMIN', 'COMPLIANCE_OFFICER', 'LOAN_OFFICER'))
+);
+
 CREATE TABLE accounts (
     account_id SERIAL PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -107,8 +117,11 @@ CREATE TABLE audit_logs (
     record_id INT,
     old_value JSONB,
     new_value JSONB,
-    log_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    log_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_audit_staff
+        FOREIGN KEY (user_id) REFERENCES staff (staff_id) ON DELETE SET NULL
 );
+
 
 
 
