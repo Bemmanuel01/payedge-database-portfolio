@@ -27,3 +27,15 @@ WHERE email = 'ngozi@email.com';
 
 COMMIT;
 
+-- Account Data
+INSERT INTO accounts
+(customer_id, account_number, account_type, balance, currency, status, opened_date)
+VALUES
+    (1, '8077343538', 'SAVINGS',   250000.00, 'NGN', 'ACTIVE', '2024-01-15'),
+    (1, '0077343538', 'CURRENT',  1500000.00, 'NGN', 'ACTIVE', '2024-01-15'),
+    (2, '9144577709', 'SAVINGS',    75000.00, 'NGN', 'ACTIVE', '2024-02-20'),
+    (3, '7034567890', 'SAVINGS',    12000.00, 'NGN', 'ACTIVE', '2024-03-10'),
+    (4, '8155609905', 'CURRENT',   890000.00, 'NGN', 'ACTIVE', '2024-01-05'),
+    (5, '8055788012', 'SAVINGS',   340000.00, 'NGN', 'ACTIVE', '2024-04-18'),
+    (5, '0055788012', 'FIXED',    2000000.00, 'NGN', 'ACTIVE', '2024-04-18')
+;
