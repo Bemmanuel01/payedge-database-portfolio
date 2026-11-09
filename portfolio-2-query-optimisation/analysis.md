@@ -1,6 +1,6 @@
 # Portfolio 2: Performance Analysis
 
-**Case study:** PayEdge Digital Bank
+**Course:** MIT 8103 Advanced Database Systems | **Case study:** PayEdge Digital Bank
 **Environment:** PostgreSQL 17 on a local machine, queried through IntelliJ
 
 ---
@@ -50,11 +50,17 @@ CREATE INDEX idx_accounts_customer ON accounts (customer_id);
 | Table plus indexes | 89 MB | 111 MB |
 | **Added by the three new indexes** | | **+22 MB** |
 
-| Index | Size |
-|---|---|
-| `idx_txn_from_account` | *(fill in from your own query)* |
-| `idx_txn_to_account` | *(fill in from your own query)* |
-| `idx_txn_status_date` | *(fill in from your own query)* |
+| Index | Size | Origin |
+|---|---|---|
+| `transactions_reference_key` (UNIQUE on `reference`) | 26 MB | existing |
+| `idx_txn_status_date` | 15 MB | **new** |
+| `transactions_pkey` | 11 MB | existing |
+| `idx_txn_to_account` | 3,496 kB (about 3.4 MB) | **new** |
+| `idx_txn_from_account` | 3,488 kB (about 3.4 MB) | **new** |
+
+The sizes reconcile with the totals above. The two original indexes come to 26 + 11 = 37 MB, which matches the 89 MB total minus the 52 MB table. The three new indexes come to about 15 + 3.4 + 3.4 = 22 MB, which matches the increase to 111 MB.
+
+**Cost against benefit.** The two single-column integer indexes are small (about 3.4 MB each) and delivered the largest gains (Tests A and C). The composite index on `(status, transaction_date)` is more than four times larger (15 MB) because it stores a text value and a timestamp for every row, yet it produced the smallest speed-up (about 34x, Test B). That makes it the least efficient index per megabyte. Because only about 10% of rows have the status `FAILED`, a **partial index** restricted to failed transactions would likely be much smaller for the same query. This was not tested here, so it is noted as a possible improvement and not as a result.
 
 ---
 
