@@ -111,7 +111,7 @@ erDiagram
     }
 ```
 
-The exported diagram is in `screenshots/08-er-diagram.png`.
+The exported diagram is in `design_screenshots/er-diagram.png`.
 
 ### 3.2 Keys and constraints
 
