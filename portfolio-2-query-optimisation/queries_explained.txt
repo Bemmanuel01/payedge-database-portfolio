@@ -1,0 +1,48 @@
+BASELINE EXECUTION PLAN
+
+QUERY PLAN A - LOOKUP FOR SENDING ACCOUNT :
+
+Gather  (cost=1000.00..10281.12 rows=99 width=74) (actual time=0.784..113.598 rows=90 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=6667
+  ->  Parallel Seq Scan on transactions  (cost=0.00..9271.22 rows=41 width=74) (actual time=2.946..40.715 rows=30 loops=3)
+        Filter: (from_account_id = 4242)
+        Rows Removed by Filter: 166640
+        Buffers: shared hit=6667
+Planning Time: 0.175 ms
+Execution Time: 113.682 ms
+
+
+QUERY PLAN B - FOR FAILED TRANSACTION IN THE LAST 30 DAYS:
+
+Gather  (cost=1000.00..12234.35 rows=4006 width=74) (actual time=1.744..139.862 rows=4160 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=6667
+  ->  Parallel Seq Scan on transactions  (cost=0.00..10833.75 rows=1669 width=74) (actual time=0.158..65.370 rows=1387 loops=3)
+        Filter: (((status)::text = 'FAILED'::text) AND (transaction_date >= (now() - '30 days'::interval)))
+        Rows Removed by Filter: 165283
+        Buffers: shared hit=6667
+Planning Time: 0.175 ms
+Execution Time: 140.228 ms
+
+QUERY PLAN C - FOR ACCOUNT STATEMENTS
+
+Gather Merge  (cost=10794.73..10814.10 rows=166 width=38) (actual time=456.352..503.709 rows=195 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=6739
+  ->  Sort  (cost=9794.71..9794.92 rows=83 width=38) (actual time=178.358..178.369 rows=65 loops=3)
+        Sort Key: transaction_date DESC
+        Sort Method: quicksort  Memory: 32kB
+        Buffers: shared hit=6739
+        Worker 0:  Sort Method: quicksort  Memory: 26kB
+        Worker 1:  Sort Method: quicksort  Memory: 27kB
+        ->  Parallel Seq Scan on transactions t  (cost=0.00..9792.06 rows=83 width=38) (actual time=0.215..177.758 rows=65 loops=3)
+              Filter: ((from_account_id = 1) OR (to_account_id = 1))
+              Rows Removed by Filter: 166605
+              Buffers: shared hit=6667
+Planning Time: 0.456 ms
+Execution Time: 503.838 ms
+
