@@ -3,6 +3,7 @@
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/portfolio-1-database-design/data.sql" value="1f6acd04-2af5-4310-9173-26c1cc29c6b3" />
     <file url="file://$PROJECT_DIR$/portfolio-1-database-design/schema.sql" value="1f6acd04-2af5-4310-9173-26c1cc29c6b3" />
+    <file url="file://$PROJECT_DIR$/portfolio-2-query-optimisation/indexes.sql" value="1f6acd04-2af5-4310-9173-26c1cc29c6b3" />
     <file url="file://$PROJECT_DIR$/portfolio-2-query-optimisation/queries_explained.sql" value="1f6acd04-2af5-4310-9173-26c1cc29c6b3" />
     <file url="file://$PROJECT_DIR$/portfolio-2-query-optimisation/query.sql" value="1f6acd04-2af5-4310-9173-26c1cc29c6b3" />
   </component>

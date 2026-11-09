@@ -1,0 +1,45 @@
+A. Query Explained After:
+
+Bitmap Heap Scan on transactions  (cost=5.19..366.24 rows=99 width=74) (actual time=1.393..1.739 rows=90 loops=1)
+  Recheck Cond: (from_account_id = 4242)
+  Heap Blocks: exact=90
+  Buffers: shared hit=93
+  ->  Bitmap Index Scan on idx_txn_from_account  (cost=0.00..5.17 rows=99 width=0) (actual time=0.064..0.064 rows=90 loops=1)
+        Index Cond: (from_account_id = 4242)
+        Buffers: shared hit=3
+Planning Time: 0.630 ms
+Execution Time: 1.821 ms
+
+ B. Query Planned - After (Failed transactions for the last 30 days)
+
+Bitmap Heap Scan on transactions  (cost=106.86..6303.07 rows=4140 width=74) (actual time=1.357..3.893 rows=4154 loops=1)
+  Recheck Cond: (((status)::text = 'FAILED'::text) AND (transaction_date >= (now() - '30 days'::interval)))
+  Heap Blocks: exact=3103
+  Buffers: shared hit=3121
+  ->  Bitmap Index Scan on idx_txn_status_date  (cost=0.00..105.83 rows=4140 width=0) (actual time=0.938..0.938 rows=4154 loops=1)
+        Index Cond: (((status)::text = 'FAILED'::text) AND (transaction_date >= (now() - '30 days'::interval)))
+        Buffers: shared hit=18
+Planning Time: 0.358 ms
+Execution Time: 4.106 ms
+
+
+C. Query Explained After (Account Statement)
+
+Sort  (cost=707.38..707.87 rows=198 width=38) (actual time=0.367..0.374 rows=195 loops=1)
+  Sort Key: transaction_date DESC
+  Sort Method: quicksort  Memory: 36kB
+  Buffers: shared hit=192
+  ->  Bitmap Heap Scan on transactions t  (cost=10.43..699.82 rows=198 width=38) (actual time=0.058..0.307 rows=195 loops=1)
+        Recheck Cond: ((from_account_id = 1) OR (to_account_id = 1))
+        Heap Blocks: exact=186
+        Buffers: shared hit=192
+        ->  BitmapOr  (cost=10.43..10.43 rows=199 width=0) (actual time=0.034..0.035 rows=0 loops=1)
+              Buffers: shared hit=6
+              ->  Bitmap Index Scan on idx_txn_from_account  (cost=0.00..5.17 rows=99 width=0) (actual time=0.025..0.025 rows=99 loops=1)
+                    Index Cond: (from_account_id = 1)
+                    Buffers: shared hit=3
+              ->  Bitmap Index Scan on idx_txn_to_account  (cost=0.00..5.17 rows=99 width=0) (actual time=0.009..0.009 rows=96 loops=1)
+                    Index Cond: (to_account_id = 1)
+                    Buffers: shared hit=3
+Planning Time: 0.123 ms
+Execution Time: 0.402 ms
