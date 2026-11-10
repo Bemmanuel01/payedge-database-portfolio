@@ -1,7 +1,5 @@
 ﻿# Portfolio 2: Query Processing and Optimisation
 
-# Portfolio 2: Query Processing and Optimisation
-
 **Course:** MIT 8103 Advanced Database Systems, MIVA Open University
 **Case study:** PayEdge Digital Bank
 **Tools:** PostgreSQL 17, IntelliJ IDEA (Database Tools), pgAdmin 4, `EXPLAIN (ANALYZE, BUFFERS)`
