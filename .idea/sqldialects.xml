@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/portfolio-2-query-optimisation/query.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/portfolio-2-query-optimisation/seed_volume.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/portfolio-3-transactions-concurrency/atomic_commit.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/portfolio-3-transactions-concurrency/isolation_levels.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/portfolio-3-transactions-concurrency/lost_update.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/portfolio-3-transactions-concurrency/reset_demo.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/portfolio-3-transactions-concurrency/rollback.sql" dialect="GenericSQL" />
