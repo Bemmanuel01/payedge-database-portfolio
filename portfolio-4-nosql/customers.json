@@ -1,0 +1,97 @@
+[
+  {
+    "customerId": 1,
+    "fullName": "Adaeze Nwachukwu",
+    "email": "adaeze@gmail.com",
+    "phone": "08077343538",
+    "bvnMasked": "*******9041",
+    "dateOfBirth": { "$date": "1990-05-15T00:00:00Z" },
+    "address": "12 Marina Street, Lagos",
+    "kycStatus": "VERIFIED",
+    "accounts": [
+      { "accountNumber": "8077343538", "accountType": "SAVINGS", "balance": 250000.00, "currency": "NGN", "status": "ACTIVE" },
+      { "accountNumber": "0077343538", "accountType": "CURRENT", "balance": 1500000.00, "currency": "NGN", "status": "ACTIVE" }
+    ],
+    "beneficiaries": [
+      { "name": "Emeka Okafor", "accountNumber": "9144577709", "bank": "PayEdge" },
+      { "name": "Ahmed Musa", "accountNumber": "2034567890", "bank": "GTBank" }
+    ],
+    "loans": [],
+    "preferences": { "transactionAlerts": true, "language": "en", "dailyTransferLimit": 500000 }
+  },
+  {
+    "customerId": 2,
+    "fullName": "Emeka Okafor",
+    "email": "emeka@gmail.com",
+    "phone": "09144577709",
+    "bvnMasked": "*******9012",
+    "dateOfBirth": { "$date": "1985-08-22T00:00:00Z" },
+    "address": "45 Wuse Zone 4, Abuja",
+    "kycStatus": "VERIFIED",
+    "accounts": [
+      { "accountNumber": "9144577709", "accountType": "SAVINGS", "balance": 75000.00, "currency": "NGN", "status": "ACTIVE" }
+    ],
+    "beneficiaries": [
+      { "name": "Chidi Eze", "accountNumber": "8155609905", "bank": "PayEdge" }
+    ],
+    "loans": [],
+    "preferences": { "transactionAlerts": true, "language": "en", "dailyTransferLimit": 200000 }
+  },
+  {
+    "customerId": 3,
+    "fullName": "Fatima Bello",
+    "email": "fatima@gmail.com",
+    "phone": "07034567890",
+    "bvnMasked": "*******0113",
+    "dateOfBirth": { "$date": "1995-03-10T00:00:00Z" },
+    "address": "7 Ahmadu Bello Way, Kaduna",
+    "kycStatus": "PENDING",
+    "accounts": [
+      { "accountNumber": "7034567890", "accountType": "SAVINGS", "balance": 12000.00, "currency": "NGN", "status": "ACTIVE" }
+    ],
+    "beneficiaries": [],
+    "loans": [
+      { "loanAmount": 100000.00, "interestRate": 18.0, "tenureMonths": 6, "status": "PENDING", "appliedDate": { "$date": "2026-10-28T09:05:00Z" } }
+    ],
+    "preferences": { "transactionAlerts": false, "language": "en", "dailyTransferLimit": 50000 }
+  },
+  {
+    "customerId": 4,
+    "fullName": "Chidi Eze",
+    "email": "chidi@gmail.com",
+    "phone": "08155609905",
+    "bvnMasked": "*******1299",
+    "dateOfBirth": { "$date": "1988-11-30T00:00:00Z" },
+    "address": "22 Forces Avenue, Enugu",
+    "kycStatus": "VERIFIED",
+    "accounts": [
+      { "accountNumber": "8155609905", "accountType": "CURRENT", "balance": 890000.00, "currency": "NGN", "status": "ACTIVE" }
+    ],
+    "beneficiaries": [],
+    "loans": [
+      { "loanAmount": 500000.00, "interestRate": 15.5, "tenureMonths": 12, "status": "APPROVED", "appliedDate": { "$date": "2026-09-20T10:15:00Z" }, "approvedDate": { "$date": "2026-09-22T14:30:00Z" } }
+    ],
+    "preferences": { "transactionAlerts": true, "language": "en", "dailyTransferLimit": 300000 }
+  },
+  {
+    "customerId": 5,
+    "fullName": "Ngozi Obi",
+    "email": "ngozi@gmail.com",
+    "phone": "08055788012",
+    "bvnMasked": "*******1315",
+    "dateOfBirth": { "$date": "1992-07-18T00:00:00Z" },
+    "address": "3 Aba Road, Port Harcourt",
+    "kycStatus": "VERIFIED",
+    "accounts": [
+      { "accountNumber": "8055788012", "accountType": "SAVINGS", "balance": 340000.00, "currency": "NGN", "status": "ACTIVE" },
+      { "accountNumber": "0055788012", "accountType": "FIXED", "balance": 2000000.00, "currency": "NGN", "status": "ACTIVE" }
+    ],
+    "beneficiaries": [
+      { "name": "Starfield College", "accountNumber": "3045678912", "bank": "Access Bank" }
+    ],
+    "loans": [
+      { "loanAmount": 1000000.00, "interestRate": 14.0, "tenureMonths": 24, "status": "DISBURSED", "appliedDate": { "$date": "2026-08-10T11:40:00Z" }, "approvedDate": { "$date": "2026-08-12T16:00:00Z" } }
+    ],
+    "preferences": { "transactionAlerts": true, "language": "en", "dailyTransferLimit": 1000000 }
+  }
+]
