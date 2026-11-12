@@ -207,4 +207,4 @@ Plan text is also saved in `explain-before.txt` and `explain-after.txt`.
 
 - *Tool used:* Claude (Anthropic).
 - *Used for:* explaining how to read execution plans, drafting the seed-data and index SQL, and structuring this report and the analysis.
-- *How the output was verified:* every statement was run in PostgreSQL 17 by me. The execution plans, timings, row counts and sizes in this report come from my own runs, and the screenshots are from my own machine. I reviewed the interpretation in `analysis.md` and can explain it.
+- *How the output was verified:* every statement was run in PostgreSQL 17 by me. The execution plans, timings, row counts and sizes in this report come from my own runs, and the screenshots are from my own machine. I reviewed the interpretation in `analysis.md`.

@@ -213,5 +213,5 @@ Screenshots are stored in `transaction_screenshots/`.
 
 - *Tool used:* Claude (Anthropic).
 - *Used for:* explaining transaction and isolation concepts, drafting the demonstration sequences, and structuring this report.
-- *How the output was verified:* I ran every demonstration myself in two `psql` sessions against PostgreSQL 17. The balances, error messages and prompts recorded in this report come from my own runs, and the screenshots are from my own machine. I corrected typing errors as they occurred and reviewed the interpretation, and I can explain each result.
+- *How the output was verified:* I ran every demonstration myself in two `psql` sessions against PostgreSQL 17. The balances, error messages and prompts recorded in this report come from my own runs, and the screenshots are from my own machine. I corrected typing errors as they occurred and reviewed the interpretation.
 
