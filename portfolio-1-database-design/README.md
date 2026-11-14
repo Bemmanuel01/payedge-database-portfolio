@@ -26,7 +26,7 @@
 | `data.sql` | Sample data, in foreign-key order |
 | `normalisation.md` | Normalisation walkthrough (1NF to 3NF) |
 | `screenshots/` | Evidence of each step (listed in section 7) |
-| `README.md` | This report |
+| `Benjamin_Emmanuel_README.md` | This report |
 
 **How to reproduce the database from scratch**
 

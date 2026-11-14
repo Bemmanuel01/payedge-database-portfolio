@@ -32,7 +32,7 @@ All demos use real PayEdge accounts from the sample data.
 | `isolation_levels.sql` | Demo 5: READ COMMITTED compared with REPEATABLE READ |
 | `reset_demo.sql` | Restores the sample balances and removes demo transactions |
 | `transaction_screenshots/` | Screenshots of every runs |
-| `README.md` | Portfolio 3 Report |
+| `Benjamin_Emmanuel_README.md` | Portfolio 3 Report |
 
 Each script is recorded based on what I ran and what I observed. The demos need two live sessions, so the scripts are documentation and are not meant to run as a single file. `reset_demo.sql` is the only one that is safe to run whole.
 

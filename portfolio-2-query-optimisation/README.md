@@ -29,7 +29,7 @@ This portfolio demonstrates how the PostgreSQL query planner executes queries, h
 | `explain-after.txt` | Execution plans after indexing |
 | `analysis.md` | Full performance analysis and interpretation |
 | `screenshots/` | Evidence (listed in section 7) |
-| `README.md` | This report |
+| `Benjamin_Emmanuel_README.md` | This report |
 
 ---
 

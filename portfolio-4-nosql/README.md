@@ -28,7 +28,7 @@ This portfolio models part of the PayEdge case study as a MongoDB **document dat
 | `queries.js` | Queries, aggregation and Explain tests, written as a first-person record |
 | `suitability.md` | Explanation of suitability, including the graph database discussion |
 | `nosql_screenshots/` | Screenshots of the portfolio |
-| `README.md` | NoSql report |
+| `Benjamin_Emmanuel_README.md` | NoSql report |
 
 ---
 
