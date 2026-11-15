@@ -30,7 +30,8 @@ Covers distributed database architecture, fragmentation, replication, cloud data
 - PostgreSQL
 - MongoDB
 - IntelliJ
-- Java
+- Java (21)
+- Git & GitHub
 
 ---
 
