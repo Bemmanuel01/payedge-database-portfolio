@@ -20,7 +20,7 @@
 -- ------------------------------------------------------------
 SELECT MIN(transaction_date) AS earliest, MAX(transaction_date) AS latest, COUNT(*) AS total
 FROM transactions;
--- OBSERVATION: earliest 2025-11-08 22:16:55, latest 2026-11-10 13:55:19, total 500013.
+-- OBSERVATION: earliest 2025-11-08 22:16:55 | latest 2026-11-10 13:55:19 | total 500013.
 --              The earliest date falls inside the 2025 Q4 partition (1 Oct 2025 to 1 Jan 2026) and the latest inside the 2026 Q4 partition (1 Oct 2026 to 1 Jan 2027),
 --              so the partition boundaries cover the whole data range and the default partition stays empty.
 --              Total: 500013.
@@ -43,12 +43,10 @@ CREATE TABLE transactions_partitioned (
     CONSTRAINT chk_part_amount CHECK (amount > 0)
 ) PARTITION BY RANGE (transaction_date);
 
--- DESIGN NOTE: PostgreSQL only allows a unique constraint on a
--- partitioned table if it includes the partition key. The primary key
--- therefore had to include transaction_date, and I could not keep a
--- UNIQUE constraint on reference alone. Uniqueness of reference is no
--- longer enforced across the whole table. I also did not add foreign
--- keys to the partitioned copy.
+-- DESIGN NOTE:
+--      - PostgreSQL only allows a unique constraint on a partitioned table if it includes the partition key.
+--      - The primary key therefore had to include transaction_date, and I could not keep a UNIQUE constraint on reference alone.
+--      - Uniqueness of reference is no longer enforced across the whole table. I also did not add foreign keys to the partitioned copy.
 
 -- ------------------------------------------------------------
 -- Step 3: Quarterly partitions and a default partition
@@ -90,7 +88,7 @@ ORDER BY tableoid::regclass::text;
 --   transactions_p2026_q1 = 122,813
 --   transactions_p2026_q2 = 124,377
 --   transactions_p2026_q3 = 126,129
---   transactions_p2026_q4 = 53,716   (the smallest, because the data stops in early November)
+--   transactions_p2026_q4 = 53,716 (the smallest, because the data stops in early November)
 --   transactions_p_default not listed, so 0 rows which add up to 500,013.
 
 
@@ -98,8 +96,11 @@ SELECT (SELECT COUNT(*) FROM transactions)             AS original_rows,
        (SELECT COUNT(*) FROM transactions_partitioned) AS partitioned_rows,
        (SELECT COUNT(*) FROM transactions)
            - (SELECT COUNT(*) FROM transactions_partitioned) AS difference;
+
 -- OBSERVATION:
--- original rows = 500013, partition_rows = 500013 and difference = 0.
+-- original rows = 500013,
+-- partition_rows = 500013 and
+-- difference = 0.
 
 -- ------------------------------------------------------------
 -- Step 6: Partition pruning

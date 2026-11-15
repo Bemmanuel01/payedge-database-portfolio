@@ -23,7 +23,7 @@ I separate what I built and observed from what I designed or discussed, because 
 | File | Purpose |
 |---|---|
 | `partitioning.sql` | PostgreSQL partitioning: tables, row counts, pruning and timing, as a first-person record |
-| `shard_key_analysis.js` | Aggregations that measure three candidate shard keys, with my observations |
+| `shardkey_analysis.js` | Aggregations that measure three candidate shard keys, with my observations |
 | `cloud_architecture.md` | Replication, sharding, availability, consistency and cloud deployment |
 | `distributed_screenshots/` | Contains screenshots and output of query ran and evidence |
 | `Benjamin_Emmanuel_README.md` | Portfolio 5 (Distributed Cloud) Report. |
