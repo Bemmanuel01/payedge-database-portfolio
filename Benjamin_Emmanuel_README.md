@@ -9,7 +9,6 @@ This PAYEDGE repository contains practical projects and implementations covering
 ## Objective:
 To demonstrate practical database management skills through hands-on projects, technical implementations, and real-world use cases.
 
----
 ## Portfolio Structure:
 
 ### 1. Database Design and Modelling
