@@ -2,7 +2,7 @@
 
 GitHub Repository: https://github.com/Bemmanuel01/payedge-database-portfolio.git
 
----
+
 ## Overview:
 This PAYEDGE repository contains practical projects and implementations covering key concepts in Database Management Systems (DBMS). It demonstrates my understanding of database design, query optimisation, transaction management, NoSQL databases, and distributed database systems.
 
